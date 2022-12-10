@@ -84,11 +84,12 @@ public class Main {
                 BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
                 bufferedWriter.write("word,count\n");
+                
                 // loop to save each entry in
-                for (Map.Entry<String, Integer> entry : wordHistogram.entrySet()) {
+                for (String key : uniqueWords) {
                     // write and save file
-                    bufferedWriter.write(entry.getKey() + "," + entry.getValue() + "\n");
-                }
+                    bufferedWriter.write(key + "," + wordHistogram.get(key) + "\n");
+                } // for
 
                 bufferedWriter.close();
                 
@@ -106,4 +107,4 @@ public class Main {
 
     }
 
-}
+} // Main
